@@ -1,0 +1,51 @@
+.App-message-page {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.App-message-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5em;
+}
+
+.Msg-message:first-child {
+  margin-top: 0em;
+}
+
+.Msg-message {
+  text-align: left;
+  margin-top: 1.5em;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.Msg-message .Msg-header {
+  font-size: .7em;
+  margin-bottom: .5em;
+  color: #00bcd4;
+}
+
+.Msg-message .Msg-username {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.Msg-message .Msg-time {
+  margin-left: 1em;
+  color: rgba(0,0,0, .4);
+}
+
+.Msg-message .Msg-body {
+  border-left: 3px solid rgba(0,0,0,.1);
+  padding-left: 8px;
+}
+
+.Msg-input-layout {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  background-color: #cddc39;
+  padding: 0em 1.5em;
+}
