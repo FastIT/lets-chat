@@ -5,7 +5,7 @@ class ChannelService {
 
   constructor() {
 
-    this.username = prompt('User name');
+    this.username = this.getUsernameFromLS();
 
     this._subject = new Rx.Subject();
 
@@ -42,6 +42,15 @@ class ChannelService {
 
   subscribe(fct) {
     return this._subject.subscribe(fct);
+  }
+
+  getUsernameFromLS(){
+    let userName = localStorage.getItem('username');
+    if (userName === undefined || userName === '' || userName === null){
+      userName = prompt('Enter your username');
+      localStorage.setItem('username', userName);
+    }
+    return userName
   }
 
 }

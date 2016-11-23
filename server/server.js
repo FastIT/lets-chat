@@ -1,5 +1,6 @@
 const io = require('socket.io')();
 const fetch = require('isomorphic-fetch');
+const emoji=require('node-emoji');
 
 const _messages = [];
 const _users = [];
@@ -47,6 +48,7 @@ io.of('/general').on('connection', (socket) => {
     }
     promise
     .then( (message) => {
+      message.text = emoji.emojify(message.text)
       message.time = Date.now()
       message.username = socket.owner.username;
       _messages.push(message);
